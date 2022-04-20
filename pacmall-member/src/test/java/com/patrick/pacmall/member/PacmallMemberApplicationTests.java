@@ -1,6 +1,6 @@
-package com.patrick.pacmall.pacmallmember;
+package com.patrick.pacmall.member;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest

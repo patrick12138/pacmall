@@ -1,4 +1,4 @@
-package com.patrick.pacmall.pacmallmember;
+package com.patrick.pacmall.member;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
