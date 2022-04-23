@@ -10,17 +10,14 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>pacmall-common</module>
         <module>pacmall-coupon</module>
         <module>pacmall-member</module>
         <module>pacmall-order</module>
         <module>pacmall-product</module>
         <module>pacmall-ware</module>
-<!--        <module>renren-fast</module>-->
+        <module>renren-fast</module>
         <module>renren-generator</module>
-        <module>pacmall-common</module>
-        <!--        <module>pacmall-common</module>-->
     </modules>
-
-
 
 </project>
