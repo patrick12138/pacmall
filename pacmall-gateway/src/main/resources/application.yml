@@ -1,0 +1,60 @@
+spring:
+  datasource:
+    username: root
+    password: xwh12138
+    url: jdbc:mysql://192.168.1.2:3306/pacmall_ums?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.1.2:8848
+    gateway:
+      routes:
+        - id: product_route
+          uri: lb://pacmall-product
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: admin_route
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
+
+        - id: third_party_route
+          uri: lb://pacmall-third-party
+          predicates:
+            - Path=/api/thirdparty/**
+          filters:
+            - RewritePath=/api/thirdparty/(?<segment>.*),/$\{segment}
+
+        - id: member_route
+          uri: lb://pacmall-member
+          predicates:
+            - Path=/api/member/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: ware_route
+          uri: lb://pacmall-ware
+          predicates:
+            - Path=/api/ware/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+  ## 前端项目，/api
+## http://localhost:88/api/captcha.jpg
+## http://localhost:8080/renren-fast/captcha.jpg
+## http://localhost:88/api/product/category/list/tree
+## http://localhost:10000/product/category/list/tree
+#mybatis-plus:
+#  mapper-locations: classpath:/maaper/**/*.xml
+#  configuration:
+#    map-underscore-to-camel-case: true
+
+server:
+  port: 88

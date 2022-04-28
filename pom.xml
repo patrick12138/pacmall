@@ -16,6 +16,7 @@
         <module>pacmall-order</module>
         <module>pacmall-product</module>
         <module>pacmall-ware</module>
+        <module>pacmall-gateway</module>
         <module>renren-fast</module>
         <module>renren-generator</module>
     </modules>
