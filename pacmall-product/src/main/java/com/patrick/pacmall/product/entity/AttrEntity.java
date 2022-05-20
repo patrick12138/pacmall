@@ -1,10 +1,13 @@
 package com.patrick.pacmall.product.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
-import java.util.Date;
+
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 
 /**
@@ -18,11 +21,10 @@ import lombok.Data;
 @TableName("pms_attr")
 public class AttrEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
-
 	/**
 	 * 属性id
 	 */
-	@TableId
+	@TableId(type = IdType.ASSIGN_ID)
 	private Long attrId;
 	/**
 	 * 属性名

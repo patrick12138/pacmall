@@ -1,0 +1,7 @@
+GET http://localhost:88/api/product/category/info/169
+###
+GET http://localhost:88/api/product/attrgroup/list
+###
+GET http://localhost:88/api/product/attrgroup/list/169
+###
+GET http://localhost:88/api/product/attrgroup/info/1526573393463164930

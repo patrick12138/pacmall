@@ -33,7 +33,7 @@
           style="width: 100%;"
         >
           <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
-          <el-table-column prop="attrGroupId" header-align="center" align="center" label="分组id"></el-table-column>
+          <el-table-column prop="attrGroupId" header-align="center" align="center" width="200" label="分组id"></el-table-column>
           <el-table-column prop="attrGroupName" header-align="center" align="center" label="组名"></el-table-column>
           <el-table-column prop="sort" header-align="center" align="center" label="排序"></el-table-column>
           <el-table-column prop="descript" header-align="center" align="center" label="描述"></el-table-column>
@@ -47,6 +47,7 @@
             label="操作"
           >
             <template slot-scope="scope">
+<!--             <p> {{dataList}}</p>-->
               <el-button type="text" size="small" @click="relationHandle(scope.row.attrGroupId)">关联</el-button>
               <el-button
                 type="text"
@@ -67,10 +68,17 @@
           layout="total, sizes, prev, pager, next, jumper"
         ></el-pagination>
         <!-- 弹窗, 新增 / 修改 -->
-        <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update>
-
+        <add-or-update
+          v-if="addOrUpdateVisible"
+          ref="addOrUpdate"
+          @refreshDataList="getDataList"
+        ></add-or-update>
         <!-- 修改关联关系 -->
-        <relation-update v-if="relationVisible" ref="relationUpdate" @refreshData="getDataList"></relation-update>
+        <relation-update
+          v-if="relationVisible"
+          ref="relationUpdate"
+          @refreshData="getDataList">
+        </relation-update>
       </div>
     </el-col>
   </el-row>

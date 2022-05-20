@@ -11,5 +11,7 @@
         <result property="attrSort" column="attr_sort"/>
     </resultMap>
 
+    <delete id="deleteBatchRelation">
 
+    </delete>
 </mapper>
