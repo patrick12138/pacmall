@@ -3,6 +3,8 @@ package com.patrick.pacmall.product;
 import com.aliyun.oss.OSS;
 import com.aliyun.oss.OSSClientBuilder;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.patrick.pacmall.product.dao.AttrAttrgroupRelationDao;
+import com.patrick.pacmall.product.entity.AttrAttrgroupRelationEntity;
 import com.patrick.pacmall.product.entity.BrandEntity;
 import com.patrick.pacmall.product.service.BrandService;
 import org.junit.Test;
@@ -10,6 +12,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -59,5 +62,4 @@ public class PacmallProductApplicationTests {
 //			System.out.println(brandEntity);
 //		}
     }
-
 }

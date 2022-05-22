@@ -13,6 +13,7 @@
     <description>每一个微服务的公共依赖，bean，工具类</description>
 
     <dependencies>
+
 <!--        mybatis-plus 3.2.0-->
         <dependency>
             <groupId>com.baomidou</groupId>

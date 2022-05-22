@@ -1,7 +1,7 @@
 package com.patrick.common.utils;
 
-import org.springframework.stereotype.Component;
 import com.baomidou.mybatisplus.core.incrementer.IdentifierGenerator;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import java.util.UUID;

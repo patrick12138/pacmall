@@ -3,14 +3,12 @@ package com.patrick.pacmall.product.config;
 import com.baomidou.mybatisplus.autoconfigure.MybatisPlusPropertiesCustomizer;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.patrick.common.utils.CustomerIdGenerator;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement //开启事务
-@MapperScan("com.patrick.pacmall.product.dao")
 public class MyBatisConfig {
     //引入分页插件
     @Bean

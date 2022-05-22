@@ -13,5 +13,9 @@
         <result property="stockLocked" column="stock_locked"/>
     </resultMap>
 
+    <insert id="addStock">
+        insert into
+    </insert>
+
 
 </mapper>

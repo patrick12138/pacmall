@@ -65,6 +65,7 @@ public class CategoryController {
 
         return R.ok();
     }
+
     @RequestMapping("/update/sort")
     //@RequiresPermissions("product:category:update")
     public R updateSort(@RequestBody CategoryEntity[] category){
@@ -79,7 +80,6 @@ public class CategoryController {
     //@RequiresPermissions("product:category:update")
     public R update(@RequestBody CategoryEntity category){
 		categoryService.updateCascade(category);
-
         return R.ok();
     }
 

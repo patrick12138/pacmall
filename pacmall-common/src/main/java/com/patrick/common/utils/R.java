@@ -8,7 +8,7 @@ import java.util.Map;
  * 
  * @author chenshun
  * @email sunlightcs@gmail.com
- * @date 2016年10月27日 下午9:59:27
+ * @date new Date()
  */
 public class R extends HashMap<String, Object> {
 	private static final long serialVersionUID = 1L;
@@ -52,4 +52,9 @@ public class R extends HashMap<String, Object> {
 		super.put(key, value);
 		return this;
 	}
+
+	public  Integer getCode() {
+		return (Integer) this.get("code");
+	}
+
 }

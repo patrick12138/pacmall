@@ -69,6 +69,7 @@
               v-for="(group,gidx) in dataResp.attrGroups"
               :key="group.attrGroupId"
             >
+
               <!-- 遍历属性,每个tab-pane对应一个表单，每个属性是一个表单项  spu.baseAttrs[0] = [{attrId:xx,val:}]-->
               <el-form ref="form" :model="spu">
                 <el-form-item
@@ -106,6 +107,7 @@
             </el-tab-pane>
           </el-tabs>
           <div style="margin:auto">
+
             <el-button type="primary" @click="step = 0">上一步</el-button>
             <el-button type="success" @click="generateSaleAttrs">下一步：设置销售属性</el-button>
           </div>
@@ -381,10 +383,10 @@ export default {
       },
       spuBaseInfoRules: {
         spuName: [
-          { required: true, message: "请输入商品名字", trigger: "blur" }
+          { required: false, message: "请输入商品名字", trigger: "blur" }
         ],
         spuDescription: [
-          { required: true, message: "请编写一个简单描述", trigger: "blur" }
+          { required: false, message: "请编写一个简单描述", trigger: "blur" }
         ],
         catalogId: [
           { required: true, message: "请选择一个分类", trigger: "blur" }
@@ -393,10 +395,10 @@ export default {
           { required: true, message: "请选择一个品牌", trigger: "blur" }
         ],
         decript: [
-          { required: true, message: "请上传商品详情图集", trigger: "blur" }
+          { required: false, message: "请上传商品详情图集", trigger: "blur" }
         ],
         images: [
-          { required: true, message: "请上传商品图片集", trigger: "blur" }
+          { required: false, message: "请上传商品图片集", trigger: "blur" }
         ],
         weight: [
           {
@@ -690,7 +692,6 @@ export default {
         });
       }
     },
-
     submitSkus() {
       console.log("~~~~~", JSON.stringify(this.spu));
       this.$confirm("将要提交商品数据，需要一小段时间，是否继续?", "提示", {
@@ -791,17 +792,9 @@ export default {
     });
     this.getMemberLevels();
   },
-  beforeCreate() {}, //生命周期-创建之前
-  beforeMount() {}, //生命周期-挂载之前
-  beforeUpdate() {}, //生命周期-更新之前
-  updated() {}, //生命周期-更新之后
   beforeDestroy() {
     PubSub.unsubscribe(this.catPathSub);
     PubSub.unsubscribe(this.brandIdSub);
-  }, //生命周期-销毁之前
-  destroyed() {}, //生命周期-销毁完成
-  activated() {} //如果页面有keep-alive缓存功能，这个函数会触发
+  }
 };
 </script>
-<stylescoped>
-</style>

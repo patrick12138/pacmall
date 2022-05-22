@@ -25,6 +25,7 @@
 			<artifactId>pacmall-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+
 		<dependency>
 			<groupId>com.patrick.pacmall</groupId>
 			<artifactId>pacmall-third-party</artifactId>

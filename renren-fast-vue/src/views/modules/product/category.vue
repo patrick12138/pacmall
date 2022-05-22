@@ -23,14 +23,14 @@
             type="text"
             size="mini"
             @click="() => append(data)"
-          >Append</el-button>
-          <el-button type="text" size="mini" @click="edit(data)">edit</el-button>
+          >添加</el-button>
+          <el-button type="text" size="mini" @click="edit(data)">修改</el-button>
           <el-button
             v-if="node.childNodes.length==0"
             type="text"
             size="mini"
             @click="() => remove(node, data)"
-          >Delete</el-button>
+          >删除</el-button>
         </span>
       </span>
     </el-tree>

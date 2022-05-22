@@ -24,7 +24,7 @@ public class AttrEntity implements Serializable {
 	/**
 	 * 属性id
 	 */
-	@TableId(type = IdType.ASSIGN_ID)
+	@TableId
 	private Long attrId;
 	/**
 	 * 属性名

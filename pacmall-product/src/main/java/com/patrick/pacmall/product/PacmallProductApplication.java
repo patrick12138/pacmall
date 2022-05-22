@@ -4,10 +4,12 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
+@EnableFeignClients(basePackages = "com.patrick.pacmall.product.feign")
+@MapperScan("com.patrick.pacmall.product.dao")
 @EnableDiscoveryClient
 @SpringBootApplication
-@MapperScan("com.patrick.pacmall.product.dao")
 public class PacmallProductApplication {
 
 	public static void main(String[] args) {
