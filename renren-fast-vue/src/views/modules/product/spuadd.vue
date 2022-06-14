@@ -188,7 +188,7 @@
             </el-table-column>
             <el-table-column label="副标题" prop="skuSubtitle">
               <template slot-scope="scope">
-                <el-input v-model="scope.row.skuSubtitle"></el-input>
+                <el-input type="textarea" autosize v-model="scope.row.skuSubtitle"></el-input>
               </template>
             </el-table-column>
             <el-table-column label="价格" prop="price">

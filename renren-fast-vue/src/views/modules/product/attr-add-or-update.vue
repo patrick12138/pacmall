@@ -16,7 +16,6 @@
           <el-option label="销售属性" :value="0"></el-option>
         </el-select>
       </el-form-item>
-
       <el-form-item label="值类型" prop="valueType">
         <el-switch
           v-model="dataForm.valueType"
@@ -24,12 +23,11 @@
           inactive-text="只能单个值"
           active-color="#13ce66"
           inactive-color="#ff4949"
-          :inactive-value="0"
           :active-value="1"
+          :inactive-value="0"
         ></el-switch>
       </el-form-item>
       <el-form-item label="可选值" prop="valueSelect">
-        <!-- <el-input v-model="dataForm.valueSelect"></el-input> -->
         <el-select
           v-model="dataForm.valueSelect"
           multiple
@@ -99,7 +97,7 @@ export default {
         attrId: 0,
         attrName: "",
         searchType: 0,
-        valueType: 1,
+        valueType: 0,
         icon: "",
         valueSelect: "",
         attrType: 1,
@@ -169,6 +167,9 @@ export default {
       default: 1
     }
   },
+  created () {
+    console.log(this.dataForm.valueType)
+  },
   watch: {
     catelogPath(path) {
       //监听到路径变化需要查出这个三级分类的分组信息
@@ -217,7 +218,7 @@ export default {
             if (data && data.code === 0) {
               this.dataForm.attrName = data.attr.attrName;
               this.dataForm.searchType = data.attr.searchType;
-              this.dataForm.valueType = data.attr.valueType;
+              this.dataForm.valueType = 0
               this.dataForm.icon = data.attr.icon;
               this.dataForm.valueSelect = data.attr.valueSelect.split(";");
               this.dataForm.attrType = data.attr.attrType;
@@ -274,7 +275,6 @@ export default {
         }
       });
     },
-    //dialogClose
     dialogClose() {
       this.catelogPath = [];
     }

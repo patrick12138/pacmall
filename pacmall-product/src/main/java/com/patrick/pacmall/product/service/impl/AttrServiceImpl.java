@@ -182,8 +182,6 @@ public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements
                 relationDao.insert(relationEntity);
             }
         }
-
-
     }
 
     /**
@@ -256,5 +254,10 @@ public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements
         PageUtils pageUtils = new PageUtils(page);
 
         return pageUtils;
+    }
+
+    @Override
+    public List<Long> selectSearchAttrIds(List<Long> attrIds) {
+        return baseMapper.selectSearchAttrIds(attrIds);
     }
 }

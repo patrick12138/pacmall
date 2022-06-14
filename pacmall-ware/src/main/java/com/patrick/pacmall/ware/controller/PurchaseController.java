@@ -55,7 +55,6 @@ public class PurchaseController {
     ///ware/purchase/merge
     @PostMapping("/merge")
     public R merge(@RequestBody MergeVo mergeVo){
-
         purchaseService.mergePurchase(mergeVo);
         return R.ok();
     }

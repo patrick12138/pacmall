@@ -24,7 +24,6 @@ public interface CouponFeignService {
     @PostMapping("/coupon/spubounds/save")
     R saveSpuBounds(@RequestBody SpuBoundTo spuBoundTo);
 
-
     @PostMapping("/coupon/skufullreduction/saveinfo")
     R saveSkuReduction(@RequestBody SkuReductionTo skuReductionTo);
 }

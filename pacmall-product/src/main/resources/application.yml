@@ -17,9 +17,13 @@ spring:
     name: pacmall-product
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
+  thymeleaf:
+    cache: false
+  redis:
+    host: 192.168.1.2
 
 mybatis-plus:
-  mapper-locations: classpath:/maaper/**/*.xml
+  mapper-locations: classpath*:/maaper/**/*.xml
   configuration:
     map-underscore-to-camel-case: true
   global-config:
@@ -34,3 +38,4 @@ server:
 logging:
   level:
     com.patrick.pacmall: debug
+

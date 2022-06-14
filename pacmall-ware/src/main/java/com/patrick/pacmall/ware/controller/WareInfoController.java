@@ -16,8 +16,6 @@ import com.patrick.pacmall.ware.service.WareInfoService;
 import com.patrick.common.utils.PageUtils;
 import com.patrick.common.utils.R;
 
-
-
 /**
  * 仓库信息
  *

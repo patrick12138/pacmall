@@ -48,6 +48,41 @@ spring:
             - Path=/api/**
           filters:
             - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
+        # 域名跳转
+        - id: pacmall_host_route
+          uri: lb://pacmall-product
+          predicates:
+            - Host=pacmall.com,item.pacmall.com
+
+        - id: pacmall_auth_route
+          uri: lb://pacmall-auth-server
+          predicates:
+            - Host=auth.pacmall.com
+
+        - id: pacmall_cart_route
+          uri: lb://pacmall-cart
+          predicates:
+            - Host=cart.pacmall.com
+
+        - id: pacmall_order_route
+          uri: lb://pacmall-order
+          predicates:
+            - Host=order.pacmall.com
+
+        - id: pacmall_member_route
+          uri: lb://pacmall-member
+          predicates:
+            - Host=member.pacmall.com
+
+        - id: pacmall_search_route
+          uri: lb://pacmall-search
+          predicates:
+            - Host=search.pacmall.com
+
+        - id: pacmall_seckill_route
+          uri: lb://pacmall-seckill
+          predicates:
+            - Host=seckill.pacmall.com
 
 ## 前端项目，/api
 ## http://localhost:88/api/captcha.jpg

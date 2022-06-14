@@ -28,5 +28,4 @@ public class SpuSaveVo {
     private Bounds bounds;
     private List<BaseAttrs> baseAttrs;
     private List<Skus> skus;
-
 }

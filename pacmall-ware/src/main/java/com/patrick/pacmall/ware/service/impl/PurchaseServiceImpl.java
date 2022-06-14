@@ -84,7 +84,6 @@ public class PurchaseServiceImpl extends ServiceImpl<PurchaseDao, PurchaseEntity
             return detailEntity;
         }).collect(Collectors.toList());
 
-
         detailService.updateBatchById(collect);
 
         PurchaseEntity purchaseEntity = new PurchaseEntity();
@@ -118,8 +117,6 @@ public class PurchaseServiceImpl extends ServiceImpl<PurchaseDao, PurchaseEntity
         //2、改变采购单的状态
         this.updateBatchById(collect);
 
-
-
         //3、改变采购项的状态
         collect.forEach((item)->{
             List<PurchaseDetailEntity> entities = detailService.listDetailByPurchaseId(item.getId());
@@ -138,7 +135,6 @@ public class PurchaseServiceImpl extends ServiceImpl<PurchaseDao, PurchaseEntity
     public void done(PurchaseDoneVo doneVo) {
 
         Long id = doneVo.getId();
-
 
         //2、改变采购项的状态
         Boolean flag = true;
@@ -170,10 +166,5 @@ public class PurchaseServiceImpl extends ServiceImpl<PurchaseDao, PurchaseEntity
         purchaseEntity.setUpdateTime(new Date());
         this.updateById(purchaseEntity);
 
-
-
-
     }
-
-
 }
