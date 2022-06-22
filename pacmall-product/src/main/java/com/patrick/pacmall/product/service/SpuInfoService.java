@@ -3,7 +3,7 @@ package com.patrick.pacmall.product.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.patrick.common.utils.PageUtils;
 import com.patrick.pacmall.product.entity.SpuInfoEntity;
-import com.patrick.pacmall.product.vo.SpuSaveVo;
+import com.patrick.pacmall.product.vo.spvsavevo.SpuSaveVo;
 
 import java.util.Map;
 

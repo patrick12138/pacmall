@@ -10,6 +10,8 @@ spring:
         server-addr: 192.168.1.2:8848
   application:
     name: pacmall-member
+  redis:
+    host: 192.168.1.2
 
 mybatis-plus:
   mapper-locations: classpath:/maaper/**/*.xml

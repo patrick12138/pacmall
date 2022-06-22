@@ -1,5 +1,6 @@
 package com.patrick.pacmall.product.service.impl;
 
+import com.patrick.pacmall.product.vo.skuItemvo.SkuItemVo;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 
@@ -95,6 +96,11 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoDao, SkuInfoEntity> i
     public List<SkuInfoEntity> getSkusBySpuId(Long spuId) {
         List<SkuInfoEntity> list = this.list(new QueryWrapper<SkuInfoEntity>().eq("spu_id",spuId));
         return list;
+    }
+
+    @Override
+    public SkuItemVo item(Long skuId) {
+        return null;
     }
 
 

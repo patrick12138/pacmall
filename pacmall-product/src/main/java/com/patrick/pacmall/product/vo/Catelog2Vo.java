@@ -18,7 +18,7 @@ public class Catelog2Vo {
     @NoArgsConstructor
     @AllArgsConstructor
     @Data
-    public static class Catelog3Vo{
+    public static class Catelog3Vo {
         private String catalog2Id;
         private String id;
         private String name;

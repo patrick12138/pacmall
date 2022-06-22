@@ -1,7 +1,6 @@
 package com.patrick.pacmall.product.service.impl;
 
 import com.alibaba.fastjson.TypeReference;
-import com.patrick.common.constant.ProductConstant;
 import com.patrick.common.to.SkuHasStockVo;
 import com.patrick.common.to.SkuReductionTo;
 import com.patrick.common.to.SpuBoundTo;
@@ -13,6 +12,7 @@ import com.patrick.pacmall.product.feign.SearchFeignService;
 import com.patrick.pacmall.product.feign.WareFeignService;
 import com.patrick.pacmall.product.service.*;
 import com.patrick.pacmall.product.vo.*;
+import com.patrick.pacmall.product.vo.spvsavevo.*;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -131,7 +131,7 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
         attrValueService.saveProductAttr(collect);
 
 
-        //5、保存spu的积分信息；gulimall_sms->sms_spu_bounds
+        //5、保存spu的积分信息；pacmall_sms->sms_spu_bounds
         Bounds bounds = vo.getBounds();
         SpuBoundTo spuBoundTo = new SpuBoundTo();
         BeanUtils.copyProperties(bounds, spuBoundTo);
@@ -194,7 +194,7 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
                 //5.3）、sku的销售属性信息：pms_sku_sale_attr_value
                 skuSaleAttrValueService.saveBatch(skuSaleAttrValueEntities);
 
-                // //5.4）、sku的优惠、满减等信息；gulimall_sms->sms_sku_ladder\sms_sku_full_reduction\sms_member_price
+                // //5.4）、sku的优惠、满减等信息；pacmall_sms->sms_sku_ladder\sms_sku_full_reduction\sms_member_price
                 SkuReductionTo skuReductionTo = new SkuReductionTo();
                 BeanUtils.copyProperties(item, skuReductionTo);
                 skuReductionTo.setSkuId(skuId);

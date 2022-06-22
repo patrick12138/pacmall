@@ -10,6 +10,12 @@ spring:
         server-addr: 192.168.1.2:8848
   application:
     name: pacmall-order
+  redis:
+    host: 192.168.1.2
+  rabbitmq:
+    host: 192.168.1.2
+    port: 5672
+    virtual-host: /
 
 mybatis-plus:
   mapper-locations: classpath:/maaper/**/*.xml

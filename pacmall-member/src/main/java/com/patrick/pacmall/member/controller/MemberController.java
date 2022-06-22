@@ -1,18 +1,22 @@
 package com.patrick.pacmall.member.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 //import org.apache.shiro.authz.annotation.RequiresPermissions;
+import com.patrick.common.exception.BizCodeEnume;
+import com.patrick.common.to.SocialUser;
+import com.patrick.pacmall.member.dao.MemberDao;
+import com.patrick.pacmall.member.exception.PhoneExistException;
+import com.patrick.pacmall.member.exception.UserNameExistException;
 import com.patrick.pacmall.member.feign.CounponFeignService;
+import com.patrick.pacmall.member.vo.MemberLoginVo;
+import com.patrick.pacmall.member.vo.MemberRegistVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.patrick.pacmall.member.entity.MemberEntity;
 import com.patrick.pacmall.member.service.MemberService;
@@ -36,6 +40,9 @@ public class MemberController {
 
     @Autowired
     public CounponFeignService counponFeignService;
+
+    @Autowired
+    MemberDao memberDao;
 
     @Value("${member.name}")
     private String name;
@@ -62,10 +69,14 @@ public class MemberController {
     //@RequiresPermissions("member:member:list")
     public R list(@RequestParam Map<String, Object> params) {
         PageUtils page = memberService.queryPage(params);
-
         return R.ok().put("page", page);
     }
 
+    @RequestMapping("/listaaa")
+    public List<MemberEntity> list(){
+        List<MemberEntity> memberEntities = memberDao.listAll();
+        return memberEntities;
+    }
 
     /**
      * 信息
@@ -111,4 +122,35 @@ public class MemberController {
         return R.ok();
     }
 
+    @PostMapping("/regist")
+    public R regist(@RequestBody MemberRegistVo vo) {
+        try {
+            memberService.regist(vo);
+        } catch (PhoneExistException e) {
+            return R.error(BizCodeEnume.PHONE_EXIST_EXCEPTION.getCode(), BizCodeEnume.PHONE_EXIST_EXCEPTION.getMsg());
+        } catch (UserNameExistException e) {
+            return R.error(BizCodeEnume.USER_EXIST_EXCEPTION.getCode(), BizCodeEnume.USER_EXIST_EXCEPTION.getMsg());
+        }
+        return R.ok();
+    }
+
+    @PostMapping("/login")
+    public R login(@RequestBody MemberLoginVo vo) {
+        MemberEntity memberEntity = memberService.login(vo);
+        if (memberEntity != null) {
+            return R.ok().setData(memberEntity);
+        } else {
+            return R.error(BizCodeEnume.LOGINACCT_PASSWORD_INVAILD_EXCEPTION.getCode(), BizCodeEnume.LOGINACCT_PASSWORD_INVAILD_EXCEPTION.getMsg());
+        }
+    }
+
+    @PostMapping("/oauth2/login")
+    public R SocialLogin(@RequestBody SocialUser vo) throws Exception {
+        MemberEntity memberEntity = memberService.socialLogin(vo);
+        if (memberEntity != null) {
+            return R.ok().setData(memberEntity);
+        } else {
+            return R.error(BizCodeEnume.LOGINACCT_PASSWORD_INVAILD_EXCEPTION.getCode(), BizCodeEnume.LOGINACCT_PASSWORD_INVAILD_EXCEPTION.getMsg());
+        }
+    }
 }

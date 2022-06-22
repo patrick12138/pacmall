@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Map;
 
 //import org.apache.shiro.authz.annotation.RequiresPermissions;
-import com.patrick.pacmall.product.vo.SpuSaveVo;
+import com.patrick.pacmall.product.vo.spvsavevo.SpuSaveVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

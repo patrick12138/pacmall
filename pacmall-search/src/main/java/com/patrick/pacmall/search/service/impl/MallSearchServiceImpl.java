@@ -298,7 +298,7 @@ public class MallSearchServiceImpl implements MallSearchService {
                     navVo.setNavName(s[0]);
                 }
                 String replace = replaceQueryString(paramVo, attr, "attrs");
-                navVo.setLink("http://search.gulimall.com/list.html?" + replace);
+                navVo.setLink("http://search.pacmall.com/list.html?" + replace);
                 return navVo;
             }).collect(Collectors.toList());
             result.setNavs(collect);
@@ -320,7 +320,7 @@ public class MallSearchServiceImpl implements MallSearchService {
                     replace = replaceQueryString(paramVo,brandVo.getBrandId()+"","brandId");
                 }
                 navVo.setNavValue(buffer.toString());
-                navVo.setLink("http://search.gulimall.com/list.html?" + replace);
+                navVo.setLink("http://search.pacmall.com/list.html?" + replace);
             }
             navs.add(navVo);
         }

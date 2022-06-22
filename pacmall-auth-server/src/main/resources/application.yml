@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.1.2:8848
+  application:
+    name: pacmall-auth-server
+  thymeleaf:
+    cache: false
+  redis:
+    host: 192.168.1.2
+server:
+  port: 21000
+

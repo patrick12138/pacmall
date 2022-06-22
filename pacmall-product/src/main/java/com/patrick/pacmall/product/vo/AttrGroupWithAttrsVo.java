@@ -1,5 +1,6 @@
 package com.patrick.pacmall.product.vo;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.patrick.pacmall.product.entity.AttrEntity;
 import lombok.Data;
 
@@ -7,10 +8,10 @@ import java.util.List;
 
 @Data
 public class AttrGroupWithAttrsVo {
-
     /**
      * 分组id
      */
+    @TableId
     private Long attrGroupId;
     /**
      * 组名

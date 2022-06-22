@@ -1,7 +1,6 @@
 package com.patrick.pacmall.product;
 
 import com.aliyun.oss.OSS;
-import com.aliyun.oss.OSSClientBuilder;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.patrick.pacmall.product.dao.AttrAttrgroupRelationDao;
 import com.patrick.pacmall.product.entity.AttrAttrgroupRelationEntity;

@@ -1,5 +1,7 @@
 package com.patrick.pacmall.order.service.impl;
 
+import com.patrick.common.to.mq.SeckillOrderTo;
+import com.patrick.pacmall.order.vo.*;
 import org.springframework.stereotype.Service;
 import java.util.Map;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -24,6 +26,36 @@ public class OrderServiceImpl extends ServiceImpl<OrderDao, OrderEntity> impleme
         );
 
         return new PageUtils(page);
+    }
+
+    @Override
+    public void closeOrder(OrderEntity entity) {
+
+    }
+
+    @Override
+    public String handlePayResult(PayAsyncVo vo) {
+        return null;
+    }
+
+    @Override
+    public void createSeckillOrder(SeckillOrderTo orderTo) {
+
+    }
+
+    @Override
+    public OrderConfirmVo confirmOrder() {
+        return null;
+    }
+
+    @Override
+    public SubmitOrderResponseVo submitOrder(OrderSubmitVo vo) {
+        return null;
+    }
+
+    @Override
+    public PayVo getOrderPay(String orderSn) {
+        return null;
     }
 
 }

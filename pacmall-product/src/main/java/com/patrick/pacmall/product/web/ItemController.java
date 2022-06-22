@@ -1,6 +1,7 @@
 package com.patrick.pacmall.product.web;
 
 import com.patrick.pacmall.product.service.SkuInfoService;
+import com.patrick.pacmall.product.vo.skuItemvo.SkuItemVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,8 +18,13 @@ public class ItemController {
 
     @GetMapping("/{skuId}.html")
     public String skuItem(@PathVariable("skuId") Long skuId, Model model) throws ExecutionException, InterruptedException {
-//        SkuItemVo vo = skuInfoService.item(skuId);
-//        model.addAttribute("item",vo);
+        SkuItemVo vo = skuInfoService.item(skuId);
+        model.addAttribute("item",vo);
         return "item";
+    }
+
+    @GetMapping("/item")
+    public String itemInfo(){
+        return "shangpinxiangqing";
     }
 }

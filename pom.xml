@@ -18,6 +18,7 @@
         <module>pacmall-ware</module>
         <module>pacmall-gateway</module>
         <module>pacmall-third-party</module>
+        <module>pacmall-auth-server</module>
         <module>renren-fast</module>
         <module>renren-generator</module>
     </modules>
