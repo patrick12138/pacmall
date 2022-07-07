@@ -7,7 +7,6 @@ import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.lang.Nullable;
 
 import javax.annotation.PostConstruct;
@@ -20,6 +19,7 @@ public class MyRabbitConfig {
 
     /**
      * 使用JSON序列化机制,进行消息转换
+     *
      * @return
      */
     @Bean
@@ -44,8 +44,6 @@ public class MyRabbitConfig {
                 System.out.println("confirm...CorrelationData[" + correlationData + "]==>[" + b + "]==>[" + s + "]");
             }
         });
-
-
         //设置消息抵达队列的确认回调
         rabbitTemplate.setReturnCallback(new RabbitTemplate.ReturnCallback() {
             /*
@@ -57,9 +55,5 @@ public class MyRabbitConfig {
                         + "]==>replyText[" + replyText + "]==>[exchange" + exchange + "]==>routingKey[" + routingKey + "]");
             }
         });
-        {
-
-        }
-        ;
-   }
+    }
 }

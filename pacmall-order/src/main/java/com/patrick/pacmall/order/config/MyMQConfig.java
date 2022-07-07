@@ -1,15 +1,11 @@
 package com.patrick.pacmall.order.config;
 
-import com.atguigu.gulimail.order.entity.OrderEntity;
-import com.rabbitmq.client.Channel;
 import org.springframework.amqp.core.*;
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,8 +33,8 @@ public class MyMQConfig {
 
     @Bean
     //监听秒杀业务队列
-    public Queue orderSeckillOrderQueue(){
-        return new Queue("order.seckill.order.queue",true,false,false);
+    public Queue orderSeckillOrderQueue() {
+        return new Queue("order.seckill.order.queue", true, false, false);
     }
 
     @Bean
@@ -63,7 +59,7 @@ public class MyMQConfig {
 
     @Bean
     //秒杀业务绑定关系
-    public Binding orderSeckillOrderQueueBinding(){
-        return new Binding("order.seckill.order.queue",Binding.DestinationType.QUEUE,"order-event-exchange","order.seckill.order",null);
+    public Binding orderSeckillOrderQueueBinding() {
+        return new Binding("order.seckill.order.queue", Binding.DestinationType.QUEUE, "order-event-exchange", "order.seckill.order", null);
     }
 }

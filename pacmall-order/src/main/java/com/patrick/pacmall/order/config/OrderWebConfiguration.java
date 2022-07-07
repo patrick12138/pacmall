@@ -1,6 +1,6 @@
 package com.patrick.pacmall.order.config;
 
-import com.atguigu.gulimail.order.interceptor.LoginUserInterceptor;
+import com.patrick.pacmall.order.interceptor.LoginUserInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
