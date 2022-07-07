@@ -12,9 +12,9 @@
 
 后端技术：Springboot，SpringCloud Alibaba，Mybatis-Plus，MySQL，Redis，RabbitMQ
 
-前端技术：HTML，CSS，jQuery，VUE， Element-UI ，thymeleaf
+前端技术：HTML，CSS，jQuery，VUE，Element-UI ，thymeleaf
 
-云服务：阿里云oss，nacos ，openfeign ，seata，gateway ，sentinel等
+云服务：阿里云OSS，Nacos，OpenFeign，Seata，Gateway，Sentinel等
 
 #### 软件架构
 pacmall-cart 购物车服务
