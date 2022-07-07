@@ -92,7 +92,7 @@ renren-generator 代码生成器
     npm install
 	npm run dev
      ```
-10. 访问项目地址：http://localhost:8080
+10. 访问项目后台地址：http://localhost:8080
 #### 参与贡献
 
 1.  Fork 本仓库
