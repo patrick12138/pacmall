@@ -17,21 +17,27 @@
 云服务：阿里云oss，nacos ，openfeign ，seata，gateway ，sentinel等
 
 #### 软件架构
-gulimall-common  共需的共有包，其中包括共同的依赖，to, 常量，统一异常处理， 一些工具类等
+pacmall-cart 购物车服务
 
-gulimall-coupon  优惠券服务，管理优惠卷和满减信息
+pacmall-common  共需的共有包，其中包括共同的依赖，to, 常量，统一异常处理， 一些工具类等
 
-gulimall-gateway 网关服务 , 进行服务转发和负载均衡 端口为88
+pacmall-coupon  优惠券服务，管理优惠卷和满减信息
 
-gulimall-member 用户管理服务
+pacmall-gateway 网关服务 , 进行服务转发和负载均衡 端口为88
 
-gulimall-order 订单服务
+pacmall-member 用户管理服务
 
-gulimall-product 商品服务
+pacmall-order 订单服务
 
-gulimall-thrid-party 第三方服务（oss）
+pacmall-product 商品服务
 
-gulimall-ware 仓库服务
+pacmall-serach 基于ElasticSearch的全局检索服务
+
+pacmall-thrid-party 第三方服务（oss存储，短信验证码，第三方登录等功能）
+
+pacmall-ware 仓库服务
+
+renren-fast-vue 后台管理系统的前端界面
 
 renren-fast 人人开源的默认后台系统
 
@@ -56,37 +62,37 @@ renren-generator 代码生成器
 
 ##### 数据库和微服务对应关系
 
-> gulimall-admin ------ renren-fast
+> pacmall-admin ------ renren-fast
 >
-> gulimall-oms ----- gulimall-order
+> pacmall-oms ----- pacmall-order
 >
-> gulimall-pms ----- gulimall-product
+> pacmall-pms ----- pacmall-product
 >
-> gulimall-sms ----- gulimall-coupon
+> pacmall-sms ----- pacmall-coupon
 >
-> gulimall-ums ----- gulimall-member
+> pacmall-ums ----- pacmall-member
 >
-> gulimall-wms ----- gulimall-ware
+> pacmall-wms ----- pacmall-ware
 
-4. 导入sql文件（）
+4. 导入sql文件（都在sql文件夹里）
 
 5. 修改各微服务的 application.yml 文件对应自己的数据库地址和数据库名称，用户，密码
 
 6. 安装nacos，并在application.yml 中配置nacos的注册地址，启动nacos
 
-7. 若要使用 gulimall-thrid-party 第三方服务里面的oss 需要自己去阿里云获取自己的 endpoint accessId  secret-key bucket 等，
+7. 若要使用 pacmall-thrid-party 第三方服务里面的oss 需要自己去阿里云获取自己的 endpoint accessId  secret-key bucket 等，
 
    然后修改application.yml 将其修改为自己的。
 
 8. 启动上述各个微服务。
 
-
-11. 进入安装目录，在终端使用命令
+9. 进入renren-fast-vue安装目录，在终端使用命令
 
      ```shell
-    npm run dev
+    npm install
+	npm run dev
      ```
-
+10. 访问项目地址：http://localhost:8080
 #### 参与贡献
 
 1.  Fork 本仓库
