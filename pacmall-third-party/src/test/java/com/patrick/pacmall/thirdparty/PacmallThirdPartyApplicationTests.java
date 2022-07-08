@@ -19,12 +19,6 @@ public class PacmallThirdPartyApplicationTests {
 
     @Test
     public void testUpload() throws IOException {
-//        String endpoint = "oss-cn-guangzhou.aliyuncs.com";
-//        String accessKeyId = "LTAI5tHduJ3gp7DamKH4Hyyr";
-//        String accessKeySecret = "wk6eSDLoOR7WigwhGoJPuhP5Jtq4HA";
-//
-//        OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
-
         InputStream fileInputStream = new FileInputStream("E:\\Wallpapers\\Stack\\01.jpg");
         ossClient.putObject("pacmall", "01.jpg", fileInputStream);
         ossClient.shutdown();
