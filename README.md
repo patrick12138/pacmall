@@ -56,7 +56,7 @@ renren-generator 代码生成器
 4. git终端 下载项目
 
    ```shell
-   git clone https://gitee.com/patrick12138/pacmall
+   git clone git@github.com:Patrick12138/pacmall.git
    ```
 
 6. 建数据库
