@@ -33,6 +33,8 @@ pacmall-product 商品服务
 
 pacmall-serach 基于ElasticSearch的全局检索服务
 
+pacmall-seckill 秒杀服务，使用sentinel对服务进行流量控制、熔断降级、系统负载保护等
+
 pacmall-thrid-party 第三方服务（oss存储，短信验证码，第三方登录等功能）
 
 pacmall-ware 仓库服务

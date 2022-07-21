@@ -2,20 +2,16 @@ package com.patrick.pacmall.product;
 
 import com.aliyun.oss.OSS;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.patrick.pacmall.product.dao.AttrAttrgroupRelationDao;
-import com.patrick.pacmall.product.entity.AttrAttrgroupRelationEntity;
 import com.patrick.pacmall.product.entity.BrandEntity;
 import com.patrick.pacmall.product.service.BrandService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -37,6 +33,7 @@ public class PacmallProductApplicationTests {
 
     @Autowired
     RedissonClient redisson;
+
     @Test
     public void testUpload() throws IOException {
 //        String endpoint = "oss-cn-guangzhou.aliyuncs.com";
@@ -75,13 +72,13 @@ public class PacmallProductApplicationTests {
     @Test
     public void testStringRedis() {
         ValueOperations<String, String> ops = stringRedisTemplate.opsForValue();
-        ops.set("hello","world"+ UUID.randomUUID().toString());
+        ops.set("hello", "world" + UUID.randomUUID().toString());
         String s = ops.get("hello");
-        System.out.println("保存的数据是"+s);
+        System.out.println("保存的数据是" + s);
     }
 
     @Test
-    public void testRedisson(){
+    public void testRedisson() {
         System.out.println(redisson);
     }
 }
