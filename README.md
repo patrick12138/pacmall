@@ -1,18 +1,18 @@
 # pacmall
 
 #### 介绍
-派克商城项目是一个较大型的分布式电商项目，主要后端采用 Spirngboot 2.1.8.RELEASE，前端使用Vue2和Element-UI框架
+派克商城项目是一个较大型的分布式电商项目，主要后端采用 SpirngBoot 2.1.8.RELEASE，前端使用Vue2和Element-UI框架
 
 派克商城后端分为商城后台管理系统和商城本体，后台系统可以实现品牌 管理，商品属性管理，商品发布与上架，商品库存管理等功能，商城本体可以实现商品信息查询，购物车等功能。
 
-前后端简单crud代码均由人人开源的自动生成器生成，学习只用关心较难的业务逻辑。是一个较为不错的进阶Springboot的电商项目。
+前后端简单crud代码均由人人开源的自动生成器生成，学习只用关心较难的业务逻辑。是一个较为不错的进阶SpringBoot与学习SpringCloud Alibaba的电商项目。
 
 
 #### 技术栈
 
-后端技术：Springboot，SpringCloud Alibaba，Mybatis-Plus，MySQL，Redis，RabbitMQ
+后端技术：SpringBoot，SpringCloud Alibaba，Mybatis-Plus，MySQL，Redis，RabbitMQ
 
-前端技术：HTML，CSS，jQuery，VUE，Element-UI ，thymeleaf
+前端技术：HTML，CSS，jQuery，VUE，Element-UI ，Thymeleaf
 
 云服务：阿里云OSS，Nacos，OpenFeign，Seata，Gateway，Sentinel等
 

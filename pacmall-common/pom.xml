@@ -95,6 +95,11 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.9.2</version>
         </dependency>
+<!--        UI式的链路追踪-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-zipkin</artifactId>-->
+<!--        </dependency>-->
     </dependencies>
 
     <dependencyManagement>
