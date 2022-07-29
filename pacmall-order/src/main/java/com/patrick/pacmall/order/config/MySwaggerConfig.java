@@ -51,7 +51,7 @@ public class MySwaggerConfig {
                 //withClassAnnotation:扫描类上的注解,参数是一个注解的反射对象
                 //withMethodAnnotation:扫描方法上的注解
                 //.apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
-                .apis(RequestHandlerSelectors.basePackage("com.atguigu.gulimail.order.listener"))
+                .apis(RequestHandlerSelectors.basePackage("com.atguigu.pacmail.order.listener"))
                 .paths(PathSelectors.ant("/abc/**"))
                 //paths(),过滤的路径
                 .build();//工厂模式
@@ -62,7 +62,7 @@ public class MySwaggerConfig {
         //作者信息
         Contact contact =new Contact("zy", "http://www.apache.org/licenses/LICENSE-2.0", "zouyu_ds@126.com");
         return new ApiInfo(
-                "zy的swagger API文档", "如果这世上存在邪恶的话，那就是人的心",
+                "zy的swagger API文档", "hellow world",
                 "1.0", "urn:tos", contact,
                 "Apache 2.0", "http://www.apache.org/licenses/LICENSE-2.0",
                 new ArrayList());

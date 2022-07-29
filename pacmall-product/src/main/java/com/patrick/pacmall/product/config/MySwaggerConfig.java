@@ -49,7 +49,7 @@ public class MySwaggerConfig {
                 //withClassAnnotation:扫描类上的注解,参数是一个注解的反射对象
                 //withMethodAnnotation:扫描方法上的注解
                 //.apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
-                .apis(RequestHandlerSelectors.basePackage("com.atguigu.gulimail.product.app"))
+                .apis(RequestHandlerSelectors.basePackage("com.atguigu.pacmail.product.app"))
                 .paths(PathSelectors.ant("/abc/**"))
                 //paths(),过滤的路径
                 .build();//工厂模式
