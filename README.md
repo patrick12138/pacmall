@@ -2,7 +2,7 @@
 
 [English](./README.md) | [Chinese](./README.zh-CN.md)
 
-`pacmall` is a Spring Cloud Alibaba based microservices e-commerce project.
+`pacmall` is a large distributed e-commerce project. The backend is mainly based on Spring Boot 2.1.8.RELEASE, and the frontend uses Vue 2 and Element-UI.
 
 ## Overview
 
